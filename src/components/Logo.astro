@@ -1,0 +1,18 @@
+---
+const {title, subtitle, className} = Astro.props;
+---
+
+<div class=`text-primary ${className}`>
+	<p class="text-left uppercase logo">{title}</p>
+	<p class="text-right madelyn text-[50px]">{subtitle}</p>
+</div>
+<style>
+	.madelyn {
+		font-family: 'Madelyn', sans-serif;
+		font-size: 50px;
+	}
+	.logo {
+		font-family: 'Akrobat', sans-serif;
+		font-size: 35px;
+	}
+</style>
