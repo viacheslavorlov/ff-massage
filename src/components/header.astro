@@ -1,24 +1,24 @@
 ---
-import type { NavItem } from "~/types";
 import Link from "~/components/Link.astro";
 import Logo from "./Logo.astro";
 import ButtonLink from "~/components/ButtonLink.astro";
-
-const navItems: Array<NavItem> = [
-  { title: "Акции", url: "#actions" },
-  { title: "Услуги", url: "#services" },
-  { title: "Контакты", url: "#contacts" },
-  { title: "Где находимся", url: "#where" },
-];
+import Container from "./Container.astro";
+import { navItems } from "~/config/menu";
+import MobileMenu from "./MobileMenu";
 ---
 
 <header
   id="page-header"
-  class="fixed top-0 z-20 flex w-full items-center justify-between border-b border-transparent bg-black px-8 py-4 text-white"
+  class="fixed top-0 z-20 flex h-[169px] w-full items-start justify-between bg-black px-4 py-4 text-white lg:px-8"
 >
-  <Logo title="Family Fitness" subtitle="relax massage" className="min-w-[300px]" />
-  <div class="flex w-full items-center justify-end ml-auto gap-10">
-    {navItems.map((item) => <Link title={item.title} url={item.url} />)}
-    <ButtonLink title="Записаться" href="#" />
-  </div>
+  <Container className={"flex-row items-start justify-between"}>
+    <Logo title="Family Fitness" subtitle="relax massage" className="" />
+    <div
+      class="ml-auto hidden w-full items-start justify-end gap-6 md:visible lg:flex lg:items-center"
+    >
+      {navItems.map((item) => <Link title={item.title} url={item.url} />)}
+      <ButtonLink title="Записаться" href="#" />
+    </div>
+      <MobileMenu client:load />
+  </Container>
 </header>

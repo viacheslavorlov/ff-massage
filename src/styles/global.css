@@ -2,7 +2,9 @@
 
 /* Register your custom font family and tell the browser where to find it. */
 
-
+.mobile-menu {
+  z-index: 1000;
+}
 @font-face {
   font-family: "InterDisplay";
   font-style: normal;
