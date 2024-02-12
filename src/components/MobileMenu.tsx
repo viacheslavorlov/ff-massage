@@ -24,7 +24,7 @@ const MobileMenu = ({ className }: Props) => {
       <img
         src="/images/icons/close_icon.svg"
         onClick={() => setIsVisible(false)}
-        className="absolute right-10 top-0  h-8 w-8 rounded-full p-1 lg:hidden border-primary  border"
+        className="absolute right-6 top-0  h-8 w-8 rounded-full p-1 lg:hidden border-primary  border"
         alt="закрыть"
       />
     </div>
