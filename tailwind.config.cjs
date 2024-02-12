@@ -8,7 +8,7 @@ module.exports = {
         sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        primary: "#ffc23f",
+        primary: "#FFAD00",
         secondary: "var(--color-secondary)",
       },
       textColor: {
