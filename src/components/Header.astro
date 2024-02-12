@@ -1,0 +1,25 @@
+---
+import { navItems } from "../config/menu.ts";
+import ButtonLink from "./ButtonLink.astro";
+import Link from "./Link.astro";
+import Logo from "./Logo.astro";
+import MobileMenu from "./MobileMenu.tsx";
+const data = await Astro.glob("../content/logo/logo.md");
+const logo = data[0].frontmatter
+---
+
+<header
+  id="page-header"
+  class="fixed top-0 z-30 flex h-28 md:h-32 lg:h-[169px] w-full flex-col items-start  bg-black p-4 text-white lg:px-8"
+>
+  <div class={"mx-auto flex w-full max-w-[1600px] flex-row items-start justify-start"}>
+    <Logo title={logo.title} subtitle={logo.subtitle} className="" />
+    <div
+      class="ml-auto hidden w-full items-start justify-end gap-6 md:visible lg:flex lg:items-center"
+    >
+      {navItems.map((item) => <Link title={item.title} url={item.url} />)}
+      <ButtonLink title="Записаться" url={logo.href} />
+    </div>
+    <MobileMenu client:load />
+  </div>
+</header>

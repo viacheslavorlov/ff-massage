@@ -1,96 +1,14 @@
 ---
-import "@fontsource-variable/inter";
-import Header from "~/components/header.astro";
-import Section from "~/components/Section.astro";
-import "~/styles/index.css";
-
-const { generator, site } = Astro;
-const image = new URL("social.jpg", site);
-const description = "Релакс массаж в Family Fitness";
+import MainLayout from "../layouts/MainLayout.astro";
+import Avantages from "../components/Advantages.astro";
+import Services from "../components/Services.astro";
+import Promotions from "../components/Promotions.astro";
+import Contacts from "../components/Contacts.astro";
 ---
 
-<!doctype html>
-<html lang="en" class="motion-safe:scroll-smooth" data-theme="dark">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <meta name="generator" content={generator} />
-
-    <title>Relax Massage</title>
-    <meta name="description" content={description} />
-
-    <!-- social media -->
-    <meta property="og:title" content="Релакс массаж в Family Fitness" />
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
-    <meta property="og:url" content={site} />
-    <!-- <meta name="twitter:card" content="summary_large_image" /> -->
-
-    <!-- initialize theme -->
-    <script is:inline>
-      const themeSaved = localStorage.getItem("theme");
-
-      if (themeSaved) {
-        document.documentElement.dataset.theme = themeSaved;
-      } else {
-        const prefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)",
-        ).matches;
-        document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
-      }
-
-      window
-        .matchMedia("(prefers-color-scheme: dark)")
-        .addEventListener("change", (event) => {
-          if (!localStorage.getItem("theme")) {
-            document.documentElement.dataset.theme = event.matches
-              ? "dark"
-              : "light";
-          }
-        });
-    </script>
-  </head>
-  <body
-    class="h-full overflow-x-hidden bg-default text-primary text-base selection:bg-secondary selection:text-white"
-  >
-    <Header />
-    <Section className="relative mt-[139px] p-0 md:p-0 ">
-      <div
-        class="absolute z-10 h-full w-full bg-gradient-to-b from-black via-transparent to-black"
-      >
-      </div>
-      <div class="w-full lg:w-auto text-center top-[-5%] lg:left-[35%] absolute lg:top-[15%] z-20 h-full">
-        <h1 class="akrobat text-6xl 2xl:text-8xl relative">Студия массажа</h1>
-        <h2 class=" madelyn text-7xl 2xl:text-9xl lg:left-[40%] -bottom-5 relative">-10% первый массаж</h2>
-      </div>
-      <img
-        src="/images/Обложка вк горизонтальная (2).png"
-        alt=""
-        class="relative w-full object-cover"
-      />
-    </Section>
-
-    <!-- <Splash />
-    <div class="space-y-24 px-8 py-32">
-      <Intro />
-      <Features />
-      <Compatibility />
-      <Showcase />
-    </div>
-    <Footer /> -->
-  </body>
-</html>
-
-<style>
-  body {
-    font-family: InterDisplay, Arial, Helvetica, sans-serif;
-  }
-  .akrobat {
-    font-family: Akrobat, Arial, Helvetica, sans-serif;
-  }
-  .madelyn {
-    font-family: Madelyn, Arial, Helvetica, sans-serif;
-  }
-</style>
+<MainLayout>
+  <Avantages />
+  <Services />
+  <Promotions />
+  <Contacts />
+</MainLayout>

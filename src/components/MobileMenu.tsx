@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { navItems } from "~/config/menu";
-import Link from "./Link.astro";
+import { navItems } from "../config/menu";
 
 type Props = {
   className?: string;
@@ -23,19 +22,22 @@ const MobileMenu = ({ className }: Props) => {
         </>
       ))}
       <img
-        src="/images/icons/close-button.svg"
+        src="/images/icons/close_icon.svg"
         onClick={() => setIsVisible(false)}
-        className="absolute right-10 top-0  h-10 w-10 lg:hidden"
+        className="absolute right-10 top-0  h-8 w-8 rounded-full p-1 lg:hidden border-primary  border"
         alt="закрыть"
       />
     </div>
   ) : (
-    <img
-      onClick={() => setIsVisible((prev) => !prev)}
-      src={"/images/icons/menu.svg"}
-      className="absolute right-6 top-4 h-10 w-10 lg:hidden"
-      alt="меню"
-    />
+    <div className="absolute right-6 top-4  h-8 w-8 rounded-full border border-primary p-1 lg:hidden">
+
+      <img
+        onClick={() => setIsVisible((prev) => !prev)}
+        src={"/images/icons/menu.svg"}
+        className="m-auto"
+        alt="меню"
+      />
+    </div>
   );
 };
 

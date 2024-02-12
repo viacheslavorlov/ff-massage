@@ -1,10 +1,11 @@
 ---
-const { url, title } = Astro.props;
+const { url, title, className } = Astro.props;
 ---
 
 <a
-  class="rounded-[20px] border-2 border-primary px-8 py-4 font-extrabold uppercase text-primary text-lg"
+  class={`cursor-pointer rounded-[20px] border-2 border-primary px-8 py-4 text-center font-extrabold uppercase text-primary text-lg ${className}`}
   href={url}
+  target="_blank"
 >
   {title}
 </a>

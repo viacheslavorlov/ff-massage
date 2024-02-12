@@ -1,0 +1,13 @@
+---
+
+const {title, image} = Astro.props;
+
+---
+
+<div class="relative w-full border flex flex-col items-center border-primary rounded-[20px] p-6 pt-8">
+	<p>{title}</p>
+	<div class="w-14 h-14 absolute -top-7 right-[calc(50% - 28px)] lg:-right-7 rounded-full border border-primary p-2 bg-black">
+		<img src={image} class="" alt="">
+	</div>
+</div>
+

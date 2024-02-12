@@ -1,0 +1,39 @@
+---
+import Section from "./Section.astro";
+import Container from "./Container.astro";
+import PromotionCard from "./PromotionCard.astro";
+import data from "../content/promotions/promotions.json";
+import ButtonLink from "./ButtonLink.astro";
+---
+
+<Section id="actions" className="bg-black py-12">
+  <Container className={"flex-col gap-24 p-4 lg:px-24"}>
+    <h2 class="akrobat w-full text-left text-4xl font-extralight">
+      {data.title}
+    </h2>
+
+    <div class="flex w-full flex-col gap-12">
+      {
+        data.promotions.map((item) => (
+          <PromotionCard
+            title={item.title}
+            image={item.image}
+            subtitle={item.subtitle}
+          />
+        ))
+      }
+
+      <ButtonLink
+        title={data.buttonLable}
+        url={data.href}
+        className={"self-center lg:max-w-sm"}
+      />
+    </div>
+  </Container>
+</Section>
+
+<style>
+  .akrobat {
+    font-family: Akrobat, Arial, Helvetica, sans-serif;
+  }
+</style>

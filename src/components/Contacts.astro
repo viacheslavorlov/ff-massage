@@ -1,0 +1,52 @@
+---
+import Section from "./Section.astro";
+import Container from "./Container.astro";
+
+const data = await Astro.glob("../content/contacts/contacts.md");
+const contacts = data[0].frontmatter;
+console.log(contacts);
+---
+
+<Section id={"contacts"} className={"bg-black"}>
+  <Container>
+    <div class="flex grid-cols-2 flex-col-reverse gap-20 px-4 md:grid">
+      <div>
+        <img alt="" src={contacts.image} />
+      </div>
+      <div
+        class="col-span-1 flex w-full flex-col items-center justify-center gap-14"
+      >
+        <div class="flex w-full flex-col gap-10">
+          <h2 class="akrobat text-4xl font-extrabold">
+            {contacts.addressTitle}
+          </h2>
+          <p class="text-2xl">{contacts.address}</p>
+        </div>
+        <div class="flex w-full flex-col gap-10">
+          <h2 class="akrobat text-4xl font-extrabold">
+            {contacts.contactsTitle}
+          </h2>
+          <p class="text-2xl">
+            Телефон: <span class="whitespace-nowrap">{contacts.phone}</span>
+          </p>
+        </div>
+
+        <div class="flex w-full flex-col gap-10">
+          <a target="_blank" href={contacts.vk}
+            ><h2
+              class="akrobat cursor-pointer text-4xl font-extrabold hover:text-secondary"
+            >
+              VK
+            </h2>
+          </a>
+        </div>
+      </div>
+    </div>
+  </Container>
+</Section>
+
+<style>
+  .akrobat {
+    font-family: Akrobat, Arial, Helvetica, sans-serif;
+  }
+</style>

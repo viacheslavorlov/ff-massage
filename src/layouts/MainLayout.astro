@@ -1,0 +1,92 @@
+---
+import "@fontsource-variable/inter";
+import Header from "../components/Header.astro";
+import Section from "../components/Section.astro";
+import "../styles/index.css";
+
+const { generator, site } = Astro;
+const image = new URL("social.jpg", site);
+const description = "Релакс массаж в Family Fitness";
+const props = await Astro.glob("./data.md");
+const data = props[0].frontmatter;
+---
+
+<!doctype html>
+<html lang="ru" class="motion-safe:scroll-smooth" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="generator" content={generator} />
+    <title>{data.title}</title>
+    <meta name="description" content={description} />
+    <!-- social media -->
+    <meta property="og:title" content="Релакс массаж в Family Fitness" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={site} />
+    <!-- initialize theme -->
+    <script is:inline>
+      const themeSaved = localStorage.getItem("theme");
+
+      if (themeSaved) {
+        document.documentElement.dataset.theme = themeSaved;
+      } else {
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
+      }
+
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", (event) => {
+          if (!localStorage.getItem("theme")) {
+            document.documentElement.dataset.theme = event.matches
+              ? "dark"
+              : "light";
+          }
+        });
+    </script>
+  </head>
+  <body
+    class="h-full overflow-x-hidden bg-default text-base text-primary selection:bg-secondary selection:text-white"
+  >
+    <Header/>
+    <Section className="relative mt-28 p-0 md:mt-32 md:p-0 lg:mt-[169px] ">
+      <div
+        class="relative z-20 h-full w-full bg-black pt-6 text-center lg:absolute lg:left-[35%] lg:top-[15%] lg:w-auto lg:bg-transparent lg:pt-0"
+      >
+        <h1 class="akrobat relative text-6xl 2xl:text-8xl">
+          {data.mainHeader}
+        </h1>
+        <h2
+          class="madelyn relative -bottom-5 text-7xl lg:left-[40%] 2xl:text-9xl"
+        >
+          {data.subtitle}
+        </h2>
+      </div>
+      <div class="relative w-full">
+        <div
+          class="absolute z-10 h-full w-full bg-gradient-to-b from-black via-transparent to-black"
+        >
+        </div>
+        <img src={data.heroImage} alt="" class="w-full object-cover" />
+      </div>
+    </Section>
+    <slot />
+  </body>
+</html>
+
+<style>
+  body {
+    font-family: InterDisplay, Arial, Helvetica, sans-serif;
+  }
+  .akrobat {
+    font-family: Akrobat, Arial, Helvetica, sans-serif;
+  }
+  .madelyn {
+    font-family: Madelyn, Arial, Helvetica, sans-serif;
+  }
+</style>
