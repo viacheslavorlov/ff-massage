@@ -1,11 +1,12 @@
 ---
 import "@fontsource-variable/inter";
+import { Image } from "astro:assets";
 import Header from "../components/Header.astro";
+import HoveringButton from '../components/HoveringButton.astro'
 import Section from "../components/Section.astro";
 import "../styles/index.css";
 
 const { generator, site } = Astro;
-const image = new URL("social.jpg", site);
 const description = "Релакс массаж в Family Fitness";
 const props = await Astro.glob("./data.md");
 const data = props[0].frontmatter;
@@ -24,7 +25,7 @@ const data = props[0].frontmatter;
     <meta property="og:title" content="Релакс массаж в Family Fitness" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
+    <!-- <meta property="og:image" content={image} /> -->
     <meta property="og:url" content={site} />
     <!-- initialize theme -->
     <script is:inline>
@@ -53,7 +54,9 @@ const data = props[0].frontmatter;
   <body
     class="h-full overflow-x-hidden bg-default text-base text-primary selection:bg-secondary selection:text-white"
   >
-    <Header/>
+    <Header />
+    <HoveringButton title="Записаться" url={data.href} className="p-2" />
+
     <Section className="relative mt-28 p-0 md:mt-32 md:p-0 lg:mt-[169px] ">
       <div
         class="relative z-20 h-full w-full bg-black pt-6 text-center lg:absolute lg:left-[35%] lg:top-[15%] lg:w-auto lg:bg-transparent lg:pt-0"
@@ -72,7 +75,14 @@ const data = props[0].frontmatter;
           class="absolute z-10 h-full w-full bg-gradient-to-b from-black via-transparent to-black"
         >
         </div>
-        <img src={data.heroImage} alt="" class="w-full object-cover" />
+        <Image
+          src={data.heroImage}
+          alt=""
+          quality={"mid"}
+          width={1920}
+          height={768}
+          class="w-full object-cover"
+        />
       </div>
     </Section>
     <slot />

@@ -1,17 +1,17 @@
 {
   "promotions": [
     {
-      "image": "/images/icons/pngwing.com.png",
+      "image": "/images/icons/pngwing.com.webp",
       "title": "На первое посещение нашей студии действует акция",
       "subtitle": "-10% на любой вид массажа"
     },
     {
-      "image": "/images/icons/pngwing.com.png",
+      "image": "/images/icons/pngwing.com.webp",
       "title": "При покупке абонемента на 10 сеансев",
       "subtitle": "1 массаж бесплатный"
     }
   ],
   "buttonLable": "ЗАПИСАТЬСЯ ПО АКЦИИ",
-  "href": "https://n1067739.yclients.com",
+  "href": "",
   "title": "АКЦИИ"
 }
