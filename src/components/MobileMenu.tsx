@@ -1,4 +1,5 @@
-import { useState } from "react";
+
+import { useState } from "preact/hooks";
 import { navItems } from "../config/menu";
 
 type Props = {
