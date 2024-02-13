@@ -1,44 +1,51 @@
-# Astro Landing Page <picture><source media="(prefers-color-scheme: dark)" srcset="https://astro.build/assets/press/astro-icon-light.png"><source media="(prefers-color-scheme: light)" srcset="https://astro.build/assets/press/astro-icon-dark.png"><img align="right" valign="center" height="79" width="63" src="https://astro.build/assets/press/astro-icon-dark.png" alt="Astro logo" /></picture>
 
-> An Astro + Tailwind CSS example/template for landing pages.
+# Документация по сайту Family Fitness Massage
 
-<div align="center">
+## Описание
+**Family Fitness Massage** - это сайт студии массажа, предоставляющий различные услуги массажа и акции для клиентов.Сайт разработан с использованием Astro.
 
-[![Built with Astro](https://astro.badg.es/v2/built-with-astro/small.svg)](https://astro.build)
+## Установка
+Убедитесь, что у вас установлен Node.js (рекомендуемая версия >= 18.14.1) и npm (рекомендуемая версия >= 6.14.0).
+Склонируйте репозиторий с кодом сайта.
+Перейдите в корневую директорию проекта и выполните команду npm install для установки необходимых зависимостей.
 
-</div>
+## Запуск
+Для запуска локального сервера разработки выполните команду npm run dev.
+Откройте браузер и перейдите по адресу http://localhost:4321 для просмотра сайта в режиме разработки.
 
-![Screenshots of Astro Landing Page](screenshots.jpg)
+## Управление данными
+### 1. Контакты
+Информация о контактах и адресе студии массажа находится в файле src/content/contacts/contacts.md.
 
-## Features
+### 2. Логотип
+Данные о логотипе студии массажа находятся в файле src/content/logo/logo.md.
 
-- 💨 Tailwind CSS for styling
-- 🎨 Themeable
-  - CSS variables are defined in `src/styles/theme.css` and mapped to Tailwind classes (`tailwind.config.cjs`)
-- 🌙 Dark mode
-- 📱 Responsive (layout, images, typography)
-- ♿ Accessible (as measured by https://web.dev/measure/)
-- 🔎 SEO-enabled (as measured by https://web.dev/measure/)
-- 🔗 Open Graph tags for social media sharing
-- 💅 [Prettier](https://prettier.io/) setup for both [Astro](https://github.com/withastro/prettier-plugin-astro) and [Tailwind](https://github.com/tailwindlabs/prettier-plugin-tailwindcss)
+### 3. Карты преимуществ
+Информация о преимуществах студии массажа представлена в файле src/data/cards.json.
 
-## Commands
+### 4. Акции
+Данные об акциях и специальных предложениях находятся в файле src/content/promotions/promotions.json.
 
-| Command                | Action                                            |
-| :--------------------- | :------------------------------------------------ |
-| `npm install`          | Install dependencies                              |
-| `npm run dev`          | Start local dev server at `localhost:4321`        |
-| `npm run build`        | Build your production site to `./dist/`           |
-| `npm run preview`      | Preview your build locally, before deploying      |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check`  |
-| `npm run astro --help` | Get help using the Astro CLI                      |
-| `npm run format`       | Format code with [Prettier](https://prettier.io/) |
-| `npm run clean`        | Remove `node_modules` and build output            |
+### 5. Услуги
+Информация о предоставляемых услугах массажа содержится в файле src/data/services.json.
 
-## Credits
+### 6. Меню
+Структура навигационного меню определена в файле src/config/menu.ts.
 
-- astronaut image
-  - source: https://github.com/withastro/astro-og-image; note: this repo is not available anymore
-- moon image
-  - source: https://unsplash.com/@nasa
-- other than that, a lot of material (showcase data, copy) was taken from official Astro sources, in particular https://astro.build/blog/introducing-astro/ and https://github.com/withastro/astro.build
+## Дополнительная информация
+Для управления глобальным состоянием приложения используется файл src/store/index.ts.
+Типы данных, используемые в проекте, описаны в файле src/types.ts.
+Мобильное меню реализовано в компоненте MobileMenu.tsx c использованием preact.
+
+## Изображения 
+Cледует распологать в папке `public` и указывать их путь в файлах 
+- src/content/contacts/contacts.md, 
+- src/content/logo/logo.md, 
+- src/content/promotions/promotions.json, 
+- src/data/cards.json, 
+- src/data/services.json
+
+## Ссылки на библиотеки
+
+[Astro](https://astro.build)
+[Preact](https://preactjs.com/)
