@@ -3,9 +3,7 @@
   "compilerOptions": {
     "baseUrl": "/home/viacheslav/Projects/ff-massage",
     "paths": {
-      "~/*": [
-        "src/*"
-      ]
+      "~/*": ["src/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "preact"

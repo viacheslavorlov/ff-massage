@@ -1,16 +1,22 @@
 ---
-import { Image } from "astro:assets"
+import { Image } from "astro:assets";
 
-const {description, image, price, duration} = Astro.props
+const { description, image, price, duration } = Astro.props;
 ---
 
-<div class="h-full flex flex-col gap-8">
-	<div class="rounded-[20px] overflow-hidden">
-		<Image src={image} width={840} height={840} class="object-cover w-full h-full" alt="">
-	</div>
-	<p class="text-black text-left">{description}</p>
-	<div class="flex justify-between">
-		<div class="text-2xl text-black font-bold">{duration}</div>
-		<div class="text-2xl font-extrabold drop-shadow">{price} Р</div>
-	</div>
+<div class="flex h-full flex-col gap-8">
+  <div class="overflow-hidden rounded-[20px]">
+    <Image
+      src={image}
+      width={840}
+      height={840}
+      class="h-full w-full object-cover"
+      alt=""
+    />
+    <p class="text-left text-black">{description}</p>
+    <div class="flex justify-between">
+      <div class="text-2xl font-bold text-black">{duration}</div>
+      <div class="text-2xl font-extrabold drop-shadow">{price} Р</div>
+    </div>
+  </div>
 </div>

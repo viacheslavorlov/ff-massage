@@ -24,14 +24,14 @@ module.exports = {
       },
       keyframes: {
         slide: {
-          '0%': { transform: 'translateX(-100px)' },
-          '50%': { transform: 'translateX(120px)' },
-          '100%': { transform: 'translateX(0%)' }
-        }
+          "0%": { transform: "translateX(-100px)" },
+          "50%": { transform: "translateX(120px)" },
+          "100%": { transform: "translateX(0%)" },
+        },
       },
       animation: {
-        'slide-in': 'slide 450ms ease-in-out 1',
-      }
+        "slide-in": "slide 450ms ease-in-out 1",
+      },
     },
   },
   // corePlugins: {

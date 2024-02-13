@@ -8,7 +8,9 @@ import Container from "./Container.astro";
 
 <Section className=" bg-black py-24">
   <Container className={"flex flex-col gap-10 p-4 lg:px-24"}>
-    <h2 class="akrobat text-left w-full text-4xl font-extrabold">{cards.title}</h2>
+    <h2 class="akrobat w-full text-left text-4xl font-extrabold">
+      {cards.title}
+    </h2>
     <div class="flex flex-col justify-evenly gap-12 lg:flex-row">
       {
         cards.cards.map((card) => (
@@ -17,7 +19,6 @@ import Container from "./Container.astro";
       }
     </div>
     <div id="services"></div>
-
   </Container>
 </Section>
 

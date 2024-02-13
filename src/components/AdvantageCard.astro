@@ -1,16 +1,16 @@
 ---
 import { Image } from "astro:assets";
 
-
-const {title, image} = Astro.props;
-
-
+const { title, image } = Astro.props;
 ---
 
-<div class="relative w-full border flex flex-col items-center border-primary rounded-[20px] p-6 pt-8">
-	<p>{title}</p>
-	<div class="w-14 h-14 absolute -top-7 right-[calc(50% - 28px)] lg:-right-7 rounded-full border border-primary p-2 bg-black">
-		<Image src={image} class="" width={56} height={56} alt="">
-	</div>
+<div
+  class="relative flex w-full flex-col items-center rounded-[20px] border border-primary p-6 pt-8"
+>
+  <p>{title}</p>
+  <div
+    class="right-[calc(50% - 28px)] absolute -top-7 h-14 w-14 rounded-full border border-primary bg-black p-2 lg:-right-7"
+  >
+    <Image src={image} class="" width={56} height={56} alt="" />
+  </div>
 </div>
-

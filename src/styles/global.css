@@ -93,17 +93,16 @@
   src: url("/fonts/Inter/InterDisplay-Black.woff2") format("woff2");
 }
 
-
 @font-face {
-  font-family: 'Akrobat';
-  src: url('/fonts/Akrobat/Akrobat-Black.woff') format('woff');
+  font-family: "Akrobat";
+  src: url("/fonts/Akrobat/Akrobat-Black.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Madelyn';
-  src: url('/fonts/Madelin/Madelyn-Regular.woff') format('woff');
+  font-family: "Madelyn";
+  src: url("/fonts/Madelin/Madelyn-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -114,4 +113,3 @@ a,
   @apply hover:text-secondary;
   @apply focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-transparent;
 }
-

@@ -5,11 +5,11 @@ const { image, title, subtitle } = Astro.props;
 ---
 
 <div class="w-full justify-start">
-  <div class="w-full flex gap-5 items-center">
-    <Image src={image} class="w-12 h-12" width={48} height={48} alt="" />
+  <div class="flex w-full items-center gap-5">
+    <Image src={image} class="h-12 w-12" width={48} height={48} alt="" />
     <p class="text-left text-2xl">{title}</p>
   </div>
-  <p class="madelyn text-center text-5xl mt-4">{subtitle}</p>
+  <p class="madelyn mt-4 text-center text-5xl">{subtitle}</p>
 </div>
 
 <style>
@@ -17,4 +17,3 @@ const { image, title, subtitle } = Astro.props;
     font-family: Madelyn, Arial, Helvetica, sans-serif;
   }
 </style>
-

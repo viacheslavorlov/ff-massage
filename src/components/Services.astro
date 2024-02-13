@@ -6,7 +6,7 @@ import Section from "./Section.astro";
 import ServiceCard from "./ServiceCard.astro";
 ---
 
-<Section  className="py-24" >
+<Section className="py-24">
   <Container className={"flex-col gap-24 p-4 lg:px-24"}>
     <h2 class="akrobat w-full text-left text-4xl text-black">{data.title}</h2>
 
@@ -22,7 +22,7 @@ import ServiceCard from "./ServiceCard.astro";
         ))
       }
       <div class="flex flex-col justify-end gap-12">
-        <div class="text-black text-2xl ">
+        <div class="text-2xl text-black">
           {data.promo}
         </div>
         <ButtonLink title={data.buttonLable} url={data.href} />

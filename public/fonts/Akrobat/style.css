@@ -1,9 +1,11 @@
 @font-face {
-    font-family: 'Akrobat';
-    src: local('Akrobat Black'), local('Akrobat-Black'),
-        url('Akrobat-Black.woff2') format('woff2'),
-        url('Akrobat-Black.woff') format('woff'),
-        url('Akrobat-Black.ttf') format('truetype');
-    font-weight: 900;
-    font-style: normal;
-  }
+  font-family: "Akrobat";
+  src:
+    local("Akrobat Black"),
+    local("Akrobat-Black"),
+    url("Akrobat-Black.woff2") format("woff2"),
+    url("Akrobat-Black.woff") format("woff"),
+    url("Akrobat-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
