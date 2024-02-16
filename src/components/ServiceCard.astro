@@ -5,18 +5,19 @@ const { description, image, price, duration } = Astro.props;
 ---
 
 <div class="flex h-full flex-col gap-8">
-  <div class="overflow-hidden rounded-[20px]">
+  <div class="overflow-hidden rounded-[20px] aspect-square">
     <Image
       src={image}
       width={840}
       height={840}
-      class="h-full w-full object-cover"
+      class="h-full w-full object-cover "
       alt=""
     />
-    <p class="text-left text-black">{description}</p>
+    
+  </div>
+  <p class="text-left text-black">{description}</p>
     <div class="flex justify-between">
       <div class="text-2xl font-bold text-black">{duration}</div>
       <div class="text-2xl font-extrabold drop-shadow">{price} Р</div>
     </div>
-  </div>
 </div>
