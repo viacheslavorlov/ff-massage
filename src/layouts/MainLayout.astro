@@ -7,7 +7,7 @@ import Section from "../components/Section.astro";
 import "../styles/index.css";
 
 const { generator, site } = Astro;
-const description = "Релакс массаж в Family Fitness";
+const description = "Массаж Family Fitness Великий Новгород.";
 const props = await Astro.glob("./data.md");
 const data = props[0].frontmatter;
 ---
@@ -25,6 +25,8 @@ const data = props[0].frontmatter;
     <meta property="og:title" content="Релакс массаж в Family Fitness" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content={description} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="массаж, великий новгород, фемели, фитнес, фамили, фэмили, FamilyFitnes, Family, Fitness, релакс, релакс-массаж, клуб" />
     <!-- <meta property="og:image" content={image} /> -->
     <meta property="og:url" content={site} />
     <!-- initialize theme -->
