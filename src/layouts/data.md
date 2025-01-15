@@ -5,7 +5,7 @@ title: Family Fitness Massage
 
 mainHeader: Студия массажа
 
-subtitle: -15% на первый сеанс
+subtitle: -20% на первый сеанс
 
 heroImage: /images/Обложка вк горизонтальная (2).webp
 
